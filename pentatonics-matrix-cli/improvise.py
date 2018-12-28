@@ -1,7 +1,7 @@
 import texttable
 from scales import scales as matrix
 
-root_set = ("C","C#","Db","D","D#","Eb","E","F","F#","Gb","G","G#","Ab","A","Bb","B")
+root_set = ("C","C#","Db","D","D#","Eb","E","F","F#","Gb","G","G#","Ab","A","Bb","B","Cb")
 chord_type_set = ("Maj7","Maj7#11","Maj7#5","Maj7b5","min7","min6","7","7#11","7b9sus","7nat9b13","7alt","min7b5","min7b5nat9","min/Maj7")
 scale_list = []
 scale_list.append(["Pent Scale", "Notes", "Tensions"])
