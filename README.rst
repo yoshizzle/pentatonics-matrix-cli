@@ -24,7 +24,25 @@ find new and exciting ways to express themselves. I hope you
 enjoy this project as much as I have in creating it.
 
 
-**This library is currently in BETA**
+**This library is currently in BETA.**
+
+TODO
+----
+
+- [ ] Expand README
+
+  - [ ] Installation
+
+  - [ ] Building from Source
+
+  - [ ] Screenshots
+
+  - [ ] Usage
+
+- [ ] Add loop to keep the program alive
+
+- [ ] Finish scales for all chord roots and types
+
 
 Dependencies
 ------------
