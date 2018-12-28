@@ -22,7 +22,8 @@ def main():
             continue
         else:
             break
-            main()
+    else:
+        main()
 
     while True:
         chord_type = input("Please enter a chord type {}: ".format(chord_type_set))
@@ -33,7 +34,8 @@ def main():
             continue
         else:
             break
-            main()
+    else:
+        main()
 
     chord = root + chord_type
 
@@ -60,6 +62,7 @@ def main():
         print("Chord not found")
 
     main()
+
 
 if __name__ == "__main__":
     main()
