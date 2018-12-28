@@ -24,7 +24,12 @@ find new and exciting ways to express themselves. I hope you
 enjoy this project as much as I have in creating it.
 
 
-**This library is currently in BETA.**
+**This library is currently in ALPHA.**
+
+
+Currently, only chords of the chord root "C" have been added. Other
+chords roots will be added soon, I promise!
+
 
 TODO
 ----
@@ -35,13 +40,13 @@ TODO
 
   - [ ] Building from Source
 
-  - [ ] Screenshots
-
-  - [ ] Usage
-
 - [ ] Add loop to keep the program alive
 
 - [ ] Finish scales for all chord roots and types
+
+- [ ] Add CONTRIBUTING.md
+
+- [ ] Add to PyPI
 
 
 Dependencies
@@ -66,8 +71,20 @@ Dependencies
 
 Usage
 -----
+::
 
-Running the matrix CLI will prompt you for a chord root and chord type.
+    python3 improvise.py
 
 
 
+Running the matrix CLI will prompt you for a chord root and chord type. The output
+will show the following:
+
+- The chord tones of the specified chord.
+
+- A list of the possible pentatonic scales in descending order from the most "in" to the most "out" sounding scales based on tensions.
+
+  - The tensions will show the relationship of the notes being played and how they correspond to the chord's tonal center.
+
+
+.. image:: pentatonics-matrix-example.png
