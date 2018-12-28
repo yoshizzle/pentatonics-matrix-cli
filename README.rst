@@ -54,11 +54,7 @@ TODO
 
   - [ ] Building from Source
 
-- [ ] Add loop to keep the program alive
-
 - [ ] Finish scales for all chord roots and types
-
-- [ ] Add CONTRIBUTING.md
 
 - [ ] Add to PyPI
 

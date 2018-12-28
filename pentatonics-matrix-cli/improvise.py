@@ -1,4 +1,6 @@
+import sys
 import texttable
+
 from scales import scales as matrix
 
 root_set = ("C","C#","Db","D","D#","Eb","E","F","F#","Gb","G","G#","Ab","A","Bb","B","Cb")
@@ -9,21 +11,29 @@ scale_list.append(["Pent Scale", "Notes", "Tensions"])
 
 
 def main():
+    print("Exit at any time by typing 'quit' and then [ENTER]\n")
+
     while True:
         root = input("Please enter a root note {}: ".format(root_set))
-        if root not in root_set:
+        if root == 'quit':
+            sys.exit(0)
+        elif root not in root_set:
             print("Invalid root note")
             continue
         else:
             break
+            main()
 
     while True:
         chord_type = input("Please enter a chord type {}: ".format(chord_type_set))
-        if chord_type not in chord_type_set:
+        if chord_type == 'quit':
+            sys.exit(0)
+        elif chord_type not in chord_type_set:
             print("Invalid chord type")
             continue
         else:
             break
+            main()
 
     chord = root + chord_type
 
@@ -49,7 +59,7 @@ def main():
     else:
         print("Chord not found")
 
-
+    main()
 
 if __name__ == "__main__":
     main()
