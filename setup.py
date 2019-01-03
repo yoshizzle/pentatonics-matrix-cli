@@ -5,7 +5,7 @@ def readme():
         return f.read()
 
 setup(name='pentatonics-matrix-cli',
-      version='0.1.1',
+      version='0.1.2',
       description='A Command Line Interface for penatonic scales',
       long_description=readme(),
       classifiers=[

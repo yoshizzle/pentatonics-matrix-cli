@@ -3,6 +3,9 @@ Pentatonics Matrix Command Line Interface
 
 .. highlight: python
 
+.. image:: https://img.shields.io/github/license/Naereen/StrapDown.js.svg
+   :target: https://github.com/Naereen/StrapDown.js/blob/master/LICENSE
+
 A Command Line Interface (CLI) tool for choosing
 which pentatonic scales to play over chords.
 
@@ -40,7 +43,7 @@ find new and exciting ways to express themselves. I hope you
 enjoy this project as much as I have in creating it.
 
 
-**This library is currently in ALPHA.**
+**This project is currently in ALPHA.**
 
 
 TODO
@@ -54,7 +57,7 @@ TODO
 
   - [ ] Building from Source
 
-- [ ] Finish scales for all chord roots and types
+- [ ] Consider adding .lower() for chord search to match all cases
 
 - [ ] Add to PyPI
 
@@ -115,4 +118,4 @@ and internalize that over a 7alt chord you can play a Major b6 pentatonic scale 
 of *A* is counterintuitive, as it suggests the use of a pentatonic scale located a perfect fifth above the chord root, which is technically incorrect.
 
 With that said, I did include enharmonic tonal centers for your chord choices. So, while C# and Db are the same note enharmonically, they function differently
-in certain chord progressions. For the sake of convenience I've included them both in the chord list.
+in certain chord progressions. For the sake of convenience I've included them both in the root note list.
