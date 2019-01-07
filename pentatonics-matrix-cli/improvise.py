@@ -14,7 +14,7 @@ def header():
     head = ("Welcome to the Pentatonics Matrix CLI. Please input your chord "
             "based on the following root notes and chord types:\n\nRoot Notes: "
             "{roots}\nChord Types: {chords}\n\nExample: CMaj7#11\n\n"
-            "(Exit at any time by by typing 'quit' and then [ENTER].)\n\n".format(roots=ROOT_SET, chords=CHORD_TYPE_SET))
+            "(Exit at any time by by typing 'quit' and then [ENTER])\n\n".format(roots=ROOT_SET, chords=CHORD_TYPE_SET))
 
 
     return head
@@ -37,6 +37,7 @@ def main(show_header=False):
     else:
         res = re.search(NOTE, chord)
         chord = NOTE.match(chord).group() + chord.split(res.group())[1]
+        seperator = ", "
 
         if chord in scales_matrix:
             print("\nThe chord tones for {} are: {}".format(chord, scales_matrix[chord][0]['notes']))
@@ -47,7 +48,10 @@ def main(show_header=False):
 
             for pents in scales_matrix[chord][1]:
                 for pent in sorted(scales_matrix[chord][1][pents], key=lambda k: k['order']):
-                    scale_list.append([pent['scale'], pent['notes'], pent['tensions']])
+                    # stylizing the output
+                    notes = seperator.join(pent['notes'])
+                    tensions = seperator.join(pent['tensions'])
+                    scale_list.append([pent['scale'], notes, tensions])
 
             mtx.add_rows(scale_list)
             print(mtx.draw())
@@ -57,4 +61,3 @@ def main(show_header=False):
 
 if __name__ == "__main__":
     main(show_header=True)
-
