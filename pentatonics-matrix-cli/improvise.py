@@ -4,8 +4,8 @@ import texttable
 
 from scales import scales as scales_matrix
 
-ROOT_SET = ("C","C#","Db","D","D#","Eb","E","F","F#","Gb","G","G#","Ab","A","Bb","B","Cb")
-CHORD_TYPE_SET = ("Maj7","Maj7#11","Maj7#5","Maj7b5","min7","min6","7","7#11","7b9sus","7nat9b13","7alt","min7b5","min7b5nat9","min/Maj7")
+ROOT_SET = {"C","C#","Db","D","D#","Eb","E","F","F#","Gb","G","G#","Ab","A","Bb","B","Cb"}
+CHORD_TYPE_SET = {"Maj7","Maj7#11","Maj7#5","Maj7b5","min7","min6","7","7#11","7b9sus","7nat9b13","7alt","min7b5","min7b5nat9","min/Maj7"}
 MATRIX = [root+chord for root in ROOT_SET for chord in CHORD_TYPE_SET]
 NOTE = re.compile('[a-gA-G][#bB]*')
 
