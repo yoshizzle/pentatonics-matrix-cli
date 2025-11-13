@@ -49,8 +49,6 @@ enjoy this project as much as I have in creating it.
 TODO
 ----
 
-- [ ] tonal centers remaining: E, F, F#, Gb, G, G#, Ab, A, A#, Bb, B, Cb
-
 - [ ] Expand README
 
   - [ ] Installation
