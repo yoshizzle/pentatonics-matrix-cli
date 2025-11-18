@@ -142,8 +142,6 @@ between the chord and the suggested pentatonic scale.
 
 For example, over a ``Db7alt`` chord:
 
-.. image:: enharmonic.png
-
 It would be simpler to display an ``A Major b6`` pentatonic,
 but that creates a misleading interpretation. The correct
 functional choice is the Major b6 pentatonic built on the
