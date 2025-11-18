@@ -1,7 +1,7 @@
 Pentatonics Matrix Command Line Interface
 =========================================
 
-.. highlight: python
+.. highlight:: python
 
 .. image:: https://img.shields.io/github/license/Naereen/StrapDown.js.svg
    :target: https://github.com/Naereen/StrapDown.js/blob/master/LICENSE
@@ -13,22 +13,22 @@ which pentatonic scales to play over chords.
 Motivation
 ----------
 
-I am a lifelong musician and had always struggled to find an 
+I am a lifelong musician and had always struggled to find an
 effective system for learning which pentatonic scales to play
-over various chords. After leaning on the 
-knowledge of jazz heavyweights such as Allan Holdsworth, 
-Jerry Bergonzi, Scott McGill, McCoy Tyner, and many others,
+over various chords. After leaning on the
+knowledge of jazz heavyweights such as Barry Greene,
+Jerry Bergonzi, McCoy Tyner, and many others,
 I came up with the idea of a matrix.
 
 For those of you who may not know, a pentatonic scale is simply
 a scale comprised of five distinct notes. The pentatonic scale
-is widely considered as one of the major cornerstones of blues,
-jazz, and rock music. Dare I say it's probably the most important
-improvisation tool in all of music! A bold statement, for sure,
-but I stand by the statement.
+is widely considered one of the major cornerstones of blues,
+jazz, and rock music. Dare I say it's one of *the* most significant
+improvisation tools in all of music! A bold statement, for sure,
+but I stand by it.
 
 Covered in this CLI are what I consider to be the most obvious
-and "important" (I use the word loosely) pentatonic scales that
+and “important” (I use the word loosely) pentatonic scales that
 you can use to improvise. Because the possibilities are literally
 endless, I left out some of the more advanced concepts such as
 bitonal and polytonal pentatonics. I encourage you to explore
@@ -39,81 +39,123 @@ Lastly, of course music is subjective, so your mileage may vary as to
 what scales sound good over different chords. This is intended
 to be a general guide and by no means an official rulebook for
 playing music. Ultimately, my goal is to help other musicians
-find new and exciting ways to express themselves. I hope you 
-enjoy this project as much as I have in creating it.
+find new and exciting ways to express themselves. I hope you
+enjoy this project as much as I have enjoyed creating it.
 
 
 **This project is currently in ALPHA.**
 
 
-TODO
-----
-
-- [ ] Expand README
-
-  - [ ] Installation
-
-  - [ ] Building from Source
-
-- [ ] Consider adding .lower() for chord search to match all cases
-
-- [ ] Add to PyPI
-
-
-Dependencies
+Installation
 ------------
 
-- Python >= 3.0
-- texttable
+Editable Install (recommended)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. Installation
-.. ------------
-.. ::
+Clone the repository, then from the project root:
 
-..     pip install pentatonics-matrix-cli
-
-.. Building from Source
-.. --------------------
-
-.. To build and install this package:
-
-.. - Clone this repository
-.. - ``./setup.py install``
-
-
-Usage
------
 ::
 
-    python3 improvise.py
+    pip install -e .
+
+This will install the ``pentatonics`` command system-wide.
 
 
+Running the CLI
+---------------
 
-Running the matrix CLI will prompt you for a chord root and chord type. The output
-will show the following:
+Once installed, you can run the CLI from **any directory**:
 
-- The chord tones of the specified chord.
+::
 
-- A list of the possible pentatonic scales in descending order from the most "in" to the most "out" sounding scales based on tensions and their relationship to the chord's tonal center.
+    pentatonics <ChordName>
 
-  - The "tensions" show the relationship of the notes in the scale and how they correspond to the chord's tonal center.
+Examples:
+
+::
+
+    pentatonics cmaj7
+    pentatonics Ab7alt
+    pentatonics F#min7b5
+    pentatonics Dbmaj7#11
+
+The CLI is case-insensitive:
+
+::
+
+    pentatonics CMaj7
+    pentatonics cMAJ7
+    pentatonics Cmaj7
 
 
-.. image:: pentatonics-matrix-example.png
+Showing the Help Menu
+---------------------
+
+To view usage information, simply run:
+
+::
+
+    pentatonics
+
+This displays:
+
+- Valid key centers
+- Valid chord types
+- Example commands
+- Usage format
+
+
+Usage Explanation
+-----------------
+
+For a given chord (e.g., ``Cmaj7``), the CLI displays:
+
+- The chord tones
+- A list of pentatonic scales that can be played over the chord
+- Each scale’s note content
+- Each scale’s tensions (their function relative to the chord root)
+
+Example output:
+
+::
+
+    === cmaj7 ===
+    Chord tones: C, E, G, B
+
+    Scale                     Notes                Tensions
+    --------------------------------------------------------
+    a minor                   A C E F G            13, R, 3, 11, 5
+    e minor                   E G A B D            3, 5, 13, 7, 9
+    ...
+
+These scales are ordered from “inside” to “outside” according
+to their tension relationships.
 
 
 A Note About Enharmonics
 ------------------------
 
-I tried to pay particular attention to enharmonics, notably that I did *not* use them where it would have been convenient to do so.
-I did this purposely, in order to show the relationship between the chord and scale. For example, take the following output for a Db7alt chord:
+I paid particular attention to enharmonics and avoided taking
+the easy route unless musically appropriate. This was done
+purposely to help demonstrate the functional relationship
+between the chord and the suggested pentatonic scale.
+
+For example, over a ``Db7alt`` chord:
 
 .. image:: enharmonic.png
 
+It would be simpler to display an ``A Major b6`` pentatonic,
+but that creates a misleading interpretation. The correct
+functional choice is the Major b6 pentatonic built on the
+*b6* degree of the chord—hence the naming ``Bbb Major b6`` in
+the output.
 
-While it clearly would have been easier to display an *A Major b6* pentatonic scale instead of *Bbb Major b6*, the crucial key is to understand
-and internalize that over a 7alt chord you can play a Major b6 pentatonic scale starting on the b6 of the parent chord. Listing this scale with the root
-of *A* is counterintuitive, as it suggests the use of a pentatonic scale located a perfect fifth above the chord root, which is technically incorrect.
+Enharmonic spellings for chord roots (e.g., ``C#`` vs ``Db``)
+are also supported.
 
-With that said, I did include enharmonic tonal centers for your chord choices. So, while C# and Db are the same note enharmonically, they function differently
-in certain chord progressions. For the sake of convenience I've included them both in the root note list.
+
+Dependencies
+------------
+
+- Python >= 3.8 (recommended)
+- No external dependencies

@@ -1,1 +1,60 @@
+# macOS
+.DS_Store
+
+# Python cache
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.pkl
+*.pickle
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# Build / distribution artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IDE / editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter / notebook checkpoints
+.ipynb_checkpoints/
+
+# Local environment overrides
+.env.local
+.envrc
+
+# Coverage and test artifacts
+.coverage
+.coverage.*
+htmlcov/
+.cache/
+pytest_cache/
+.tox/
+.mypy_cache/
+.dmypy.json
+.pytest_cache/
+
+# Temporary files
+*.tmp
+*.log
+*.bak
+
+# OS / file system metadata
+Thumbs.db
+Desktop.ini
