@@ -7,15 +7,14 @@ import pkgutil
 # Map root spellings to (key_folder, canonical_root_for_scale_data)
 ROOT_MAP = {
     "c":  ("c",      "c"),
+
     "c#": ("csharp", "c#"),
     "db": ("csharp", "c#"),
 
     "d":  ("d",      "d"),
 
-    "d#": ("dsharp", "d#"),
-    "eb": ("dsharp", "d#"),
-
-    "e":  ("e",      "e"),
+    "eb": ("eb",     "eb"),
+    "d#": ("eb",     "eb"),
 
     "f":  ("f",      "f"),
 
@@ -24,17 +23,16 @@ ROOT_MAP = {
 
     "g":  ("g",      "g"),
 
-    "g#": ("gsharp", "g#"),
-    "ab": ("gsharp", "g#"),
+    "ab": ("ab",     "ab"),
+    "g#": ("ab",     "ab"),
 
     "a":  ("a",      "a"),
 
-    "a#": ("bb",     "bb"),
     "bb": ("bb",     "bb"),
+    "a#": ("bb",     "bb"),
 
     "b":  ("b",      "b"),
 }
-
 
 def parse_key_and_chord(user_input: str):
     """
