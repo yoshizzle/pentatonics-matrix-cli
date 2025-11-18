@@ -3,7 +3,7 @@
 import sys
 from pentatonics_matrix_cli.utils.loader import (
     parse_key_and_chord,
-    load_key_data
+    load_key_data,
 )
 
 
@@ -12,37 +12,32 @@ def print_help():
 Pentatonics Matrix CLI – Usage
 
 Usage:
-    pentatonics <KeyChord>
+    pentatonics <ChordName>
 
 Examples:
-    pentatonics CMaj7
-    pentatonics Ab7alt
+    pentatonics Cmaj7
+    pentatonics cmaj7
+    pentatonics C#7alt
+    pentatonics Db7alt
     pentatonics F#min7b5
-    pentatonics Dbmaj7#11
 
-Valid key centers:
-    C  C#  Db  D  Eb  E  F  F#  Gb  G  Ab  A  Bb  B
-
-Valid chord types:
-    maj7           maj7#11       maj7#5       maj7b5
-    min7           min6          minmaj7
-    min7b5         min7b5nat9
-    7              7#11          7b9sus
-    7nat9b13       alt
+Notes:
+    • Key root is case-insensitive (C, c, c#, C#, db, Db, etc.)
+    • Chord types are case-insensitive (maj7, MIN7, MinMaj7, etc.)
 """)
     sys.exit(0)
 
 
-# ----------------------------------------------------
-# Simple built-in table formatter (no dependencies)
-# ----------------------------------------------------
 def render_table(rows, headers):
+    # Compute column widths
     cols = list(zip(headers, *rows))
     widths = [max(len(str(x)) for x in col) for col in cols]
-    fmt = "    ".join("{{:<{}}}".format(w) for w in widths)
 
-    lines = [fmt.format(*headers)]
+    COLUMN_PADDING = "      "  # adjust spacing between columns
+    fmt = COLUMN_PADDING.join("{{:<{}}}".format(w) for w in widths)
+
     header_line = fmt.format(*headers)
+    lines = [header_line]
     lines.append("-" * len(header_line))
 
     for r in rows:
@@ -64,8 +59,8 @@ def print_scales_for_chord(chord_key, chord_data):
     for entry in scale_list:
         rows.append([
             entry["scale"],
-            "   ".join(entry["notes"]),
-            ", ".join(entry["tensions"])
+            "   ".join(entry["notes"]),         # extra spacing between notes
+            ", ".join(entry["tensions"]),
         ])
 
     print(render_table(rows, headers))
@@ -78,13 +73,14 @@ def main():
     user_input = sys.argv[1].strip()
 
     try:
-        key_string, key_folder, chord_symbol = parse_key_and_chord(user_input)
+        key_folder, chord_key = parse_key_and_chord(user_input)
         scale_dict = load_key_data(key_folder)
 
-        chord_key = (key_string + chord_symbol).lower()
-
         if chord_key not in scale_dict:
-            raise KeyError(f"Chord '{user_input}' ({chord_key}) not found in key '{key_folder}'")
+            raise KeyError(
+                f"Chord '{user_input}' not found. "
+                f"(internal lookup key: '{chord_key}' in folder '{key_folder}')"
+            )
 
         print_scales_for_chord(chord_key, scale_dict[chord_key])
 
