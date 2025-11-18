@@ -123,9 +123,9 @@ Example output:
     Chord tones: C, E, G, B
 
     Scale                     Notes                Tensions
-    --------------------------------------------------------
-    a minor                   A C E F G            13, R, 3, 11, 5
-    e minor                   E G A B D            3, 5, 13, 7, 9
+    --------------------------------------------------------------
+    a minor                   A  C  E  F  G        13, R, 3, 11, 5
+    e minor                   E  G  A  B  D        3, 5, 13, 7, 9
     ...
 
 These scales are ordered from “inside” to “outside” according
