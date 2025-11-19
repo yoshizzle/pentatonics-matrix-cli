@@ -24,6 +24,8 @@ Examples:
 Notes:
     • Key root is case-insensitive (C, c, c#, C#, db, Db, etc.)
     • Chord types are case-insensitive (maj7, MIN7, MinMaj7, etc.)
+    • Possible chord qualities include (maj7, maj7b5, maj7#5, maj7#11, min6, min7, min7b5, min7b5nat9, minmaj7, dom7, dom7#11, dom7b5, dom7b9sus, dom7nat9b13, alt)
+    • Some key roots are enharmonic. For example, if you input a Db chord it will return results for C#.
 """)
     sys.exit(0)
 

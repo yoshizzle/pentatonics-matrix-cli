@@ -1,0 +1,50 @@
+# dom7b5.py — A key center
+
+SCALE_DATA = {
+    "a7b5": [
+        {"notes": ("A", "C#", "Eb", "G")},
+        {"scales": [
+
+            {"scale": "F# minor 6",
+             "notes": ("F#", "A", "B", "C#", "D#"),
+             "tensions": ("11", "13", "b7", "r", "3"),
+             "order": 10},
+
+            {"scale": "A minor 7b5",
+             "notes": ("A", "C", "D", "Eb", "G"),
+             "tensions": ("r", "b3", "11", "b5", "b7"),
+             "order": 20},
+
+            {"scale": "D minor",
+             "notes": ("D", "F", "G", "A", "C"),
+             "tensions": ("11", "13", "b7", "r", "b3"),
+             "order": 30},
+
+            # Added pentatonics
+            {"scale": "coltrane pentatonic",
+             "notes": ("A", "B", "C#", "Eb", "F#"),
+             "tensions": ("r", "9", "3", "#5", "7"),
+             "order": 100},
+
+            {"scale": "mccoy pentatonic",
+             "notes": ("A", "B", "D", "Eb", "F#"),
+             "tensions": ("r", "9", "11", "5", "13"),
+             "order": 110},
+
+            {"scale": "hexatonic altered dominant pentatonic",
+             "notes": ("A", "Bb", "C#", "Eb", "F#"),
+             "tensions": ("r", "b9", "3", "b5", "13"),
+             "order": 120},
+
+            {"scale": "altered pentatonic",
+             "notes": ("A", "C", "E", "Eb", "G"),
+             "tensions": ("r", "#9", "b5", "13", "b7"),
+             "order": 130},
+
+            {"scale": "lydian dominant pentatonic",
+             "notes": ("A", "B", "C#", "D#", "G"),
+             "tensions": ("r", "9", "3", "#11", "b7"),
+             "order": 140}
+        ]}
+    ]
+}
